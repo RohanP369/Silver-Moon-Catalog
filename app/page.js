@@ -1,7 +1,8 @@
-export default function Home() {
+export default function HomePage() {
   return (
-    <main className="min-h-screen flex items-center justify-center text-2xl">
-      Silver Moon Catalog Home Page
+    <main style={{ padding: "2rem", fontFamily: "sans-serif" }}>
+      <h1>Welcome to Silver Moon Catalog</h1>
+      <p>This is your homepage. Customize it however you like!</p>
     </main>
   );
 }
