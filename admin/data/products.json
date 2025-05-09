@@ -1,1 +1,21 @@
-[]
+[
+  {
+    "name": "Mini Rig",
+    "sku": "MR-001",
+    "price": "25.00",
+    "quantity": "50",
+    "description": "Small recycler water pipe",
+    "collection": "Water Pipes",
+    "image": "/uploads/mini-rig.jpg"
+  },
+  {
+    "name": "Torch Lighter",
+    "sku": "TL-101",
+    "price": "12.00",
+    "quantity": "100",
+    "description": "Pocket-size refillable torch",
+    "collection": "Accessories",
+    "image": "/uploads/torch-lighter.jpg"
+  }
+]
+
