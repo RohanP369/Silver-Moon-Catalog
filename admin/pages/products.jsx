@@ -1,4 +1,8 @@
-// Add at the top:
+'use client'
+import { useState } from 'react';
+import AdminLayout from '../components/AdminLayout';
+
+// ✅ JSON downloader utility
 const downloadJSON = (data, filename = 'product.json') => {
   const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
   const url = URL.createObjectURL(blob);
@@ -8,18 +12,6 @@ const downloadJSON = (data, filename = 'product.json') => {
   a.click();
   URL.revokeObjectURL(url);
 };
-
-// Replace handleSubmit with:
-const handleSubmit = (e) => {
-  e.preventDefault();
-  console.log('Product data:', product);
-  downloadJSON(product, `${product.name || 'product'}.json`);
-  alert('Product JSON downloaded. Commit it to GitHub manually.');
-};
-
-'use client'
-import { useState } from 'react';
-import AdminLayout from '../components/AdminLayout';
 
 export default function ProductsPage() {
   const [product, setProduct] = useState({
@@ -46,8 +38,15 @@ export default function ProductsPage() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('Product data:', product);
-    alert('Product data saved locally! (Next: save to file or GitHub)');
+
+    const exportData = {
+      ...product,
+      image: product.image ? `/uploads/${product.image.name}` : null
+    };
+
+    console.log('Product data:', exportData);
+    downloadJSON(exportData, `${product.name || 'product'}.json`);
+    alert('Product JSON downloaded. Upload this into products.json in GitHub.');
   };
 
   return (
@@ -71,3 +70,4 @@ export default function ProductsPage() {
     </AdminLayout>
   );
 }
+
