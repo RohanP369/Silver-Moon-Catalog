@@ -1,12 +1,12 @@
 [
   {
-    "name": "Mini Rig",
-    "sku": "MR-001",
-    "price": "25.00",
-    "quantity": "50",
+    "name": "WP 9420",
+    "sku": "744947891947",
+    "price": "30.00",
+    "quantity": "254",
     "description": "Small recycler water pipe",
     "collection": "Water Pipes",
-    "image": "/uploads/mini-rig.jpg"
+    "image": "/uploads/WP9420.jpg"
   },
   {
     "name": "Torch Lighter",
