@@ -1,6 +1,6 @@
 'use client'
 import { useState } from 'react';
-import AdminLayout from '../components/AdminLayout';
+import AdminLayout from '../../components/AdminLayout';
 
 // ✅ JSON downloader utility
 const downloadJSON = (data, filename = 'product.json') => {
