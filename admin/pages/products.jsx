@@ -1,3 +1,22 @@
+// Add at the top:
+const downloadJSON = (data, filename = 'product.json') => {
+  const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = filename;
+  a.click();
+  URL.revokeObjectURL(url);
+};
+
+// Replace handleSubmit with:
+const handleSubmit = (e) => {
+  e.preventDefault();
+  console.log('Product data:', product);
+  downloadJSON(product, `${product.name || 'product'}.json`);
+  alert('Product JSON downloaded. Commit it to GitHub manually.');
+};
+
 'use client'
 import { useState } from 'react';
 import AdminLayout from '../components/AdminLayout';
